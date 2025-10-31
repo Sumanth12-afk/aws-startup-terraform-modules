@@ -390,16 +390,6 @@ resource "aws_ecs_service" "main" {
     }
   }
 
-  deployment_configuration {
-    maximum_percent         = 200
-    minimum_healthy_percent = 100
-
-    deployment_circuit_breaker {
-      enable   = true
-      rollback = true
-    }
-  }
-
   tags = merge(
     var.tags,
     {

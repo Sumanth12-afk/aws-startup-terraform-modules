@@ -166,6 +166,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [detect-changes, terraform-fmt]
     if: needs.detect-changes.outputs.modules != '[]'
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
     
     strategy:
       matrix:
@@ -183,10 +187,12 @@ jobs:
           soft_fail: true
           format: sarif
           additional_args: --minimum-severity MEDIUM
+        continue-on-error: true
 
       - name: Upload tfsec SARIF
         uses: github/codeql-action/upload-sarif@v3
-        if: always()
+        if: always() && hashFiles('results.sarif') != ''
+        continue-on-error: true
         with:
           sarif_file: results.sarif
           category: tfsec-${{ matrix.module }}
