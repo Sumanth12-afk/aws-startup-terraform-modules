@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  TERRAFORM_VERSION: '1.5.0'
+  TERRAFORM_VERSION: '1.10.5'
   TFLINT_VERSION: 'v0.50.0'
   TFSEC_VERSION: 'v1.28.0'
   TERRAFORM_DOCS_VERSION: 'v0.17.0'
