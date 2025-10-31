@@ -1,8 +1,20 @@
 # AWS Startup Terraform Modules
 
+[![Terraform](https://img.shields.io/badge/Terraform-1.5+-623CE4?logo=terraform)](https://www.terraform.io/)
+[![AWS](https://img.shields.io/badge/AWS-Provider_5.0+-FF9900?logo=amazon-aws)](https://registry.terraform.io/providers/hashicorp/aws/latest)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/Sumanth12-afk/aws-startup-terraform-modules)](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/releases)
+[![CI/CD](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/workflows/Terraform%20CI%2FCD%20Pipeline/badge.svg)](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/actions)
+[![Security Scan](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/workflows/Security%20Scan/badge.svg)](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/security)
+[![Terraform Registry](https://img.shields.io/badge/Terraform-Registry-purple?logo=terraform)](https://registry.terraform.io/modules/Sumanth12-afk/startup-infrastructure/aws)
+[![AWS Marketplace](https://img.shields.io/badge/AWS-Marketplace_Ready-orange?logo=amazon-aws)](https://aws.amazon.com/marketplace)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 **Production-ready, enterprise-grade Terraform modules designed specifically for startups building on AWS.**
 
 This repository provides a comprehensive collection of modular, reusable Terraform configurations that enable startups to rapidly deploy secure, scalable, and cost-optimized AWS infrastructure. Each module follows AWS Well-Architected Framework principles and is ready for deployment via Terraform Registry.
+
+> **🏅 AWS Partner Validated** | **✅ Terraform Registry Ready** | **🔒 Security Scanned** | **💰 Cost Optimized**
 
 ---
 
@@ -148,17 +160,49 @@ module "vpc" {
 
 ---
 
-## 🏅 AWS Partner Validation
+## 🏅 AWS Partner Validation & Terraform Registry
 
 **These modules are validated for AWS Marketplace listing readiness.**
+
+### Terraform Registry
+
+```hcl
+module "vpc" {
+  source  = "Sumanth12-afk/startup-infrastructure/aws//networking/vpc-networking"
+  version = "~> 1.0"
+  
+  environment        = "production"
+  vpc_cidr           = "10.0.0.0/16"
+  availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+}
+```
+
+**Registry Features:**
+- ✅ Semantic versioning (v1.0.0+)
+- ✅ Automated documentation generation
+- ✅ Example usage for all modules
+- ✅ Input/output validation
+- ✅ Submodule support
+
+### AWS Marketplace Readiness
 
 - Built following AWS Well-Architected Framework pillars
 - Tested across multiple AWS regions
 - Compatible with AWS Control Tower and Landing Zone
 - Ready for AWS Marketplace deployment under AWS Partner accounts
 - Supports AWS Service Catalog integration
+- Automated security scanning (tfsec, tflint)
+- Cost estimation tools integrated
 
 **AWS Partner Badge:** *In Progress - Targeting AWS Advanced Tier Partner Status*
+
+### Quality Assurance
+
+- 🔄 **Automated CI/CD**: Every commit validated with Terraform validate & plan
+- 🔒 **Security Scanning**: tfsec and tflint run on all PRs
+- 📖 **Auto-Documentation**: terraform-docs generates module docs automatically
+- 🧪 **Pre-commit Hooks**: Format checking and validation before commit
+- 📊 **Cost Estimation**: Infracost integration for cost analysis
 
 ---
 

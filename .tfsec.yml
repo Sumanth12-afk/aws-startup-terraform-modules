@@ -1,0 +1,41 @@
+# tfsec Configuration for AWS Startup Terraform Modules
+
+# Minimum severity to report
+minimum_severity: MEDIUM
+
+# Exclude specific checks
+exclude:
+  # S3 bucket logging - not required for state buckets
+  - AWS002
+  # S3 bucket versioning - handled separately
+  - AWS077
+
+# Include custom checks
+include:
+  - security
+  - encryption
+  - iam
+  - networking
+
+# Severity overrides
+severity_overrides:
+  AWS001: HIGH    # S3 bucket has public access
+  AWS017: HIGH    # Unencrypted S3 bucket
+  AWS018: HIGH    # Missing S3 bucket encryption
+  AWS019: MEDIUM  # S3 bucket doesn't have logging
+  AWS024: HIGH    # Unencrypted EBS volume
+  AWS026: HIGH    # Unencrypted RDS instance
+  AWS089: HIGH    # Unencrypted EBS snapshot
+
+# Custom checks directory
+custom_checks_dir: .tfsec/custom
+
+# Excluded directories
+exclude_paths:
+  - .terraform
+  - examples
+  - test
+
+# Output format options
+format: default
+

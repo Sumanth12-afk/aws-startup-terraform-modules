@@ -1,0 +1,59 @@
+{
+  "name": "aws-startup-terraform-modules",
+  "version": "1.0.0",
+  "description": "Production-ready Terraform modules for AWS startups. Deploy secure, scalable infrastructure in minutes.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sumanth12-afk/aws-startup-terraform-modules.git"
+  },
+  "keywords": [
+    "terraform",
+    "aws",
+    "infrastructure-as-code",
+    "terraform-modules",
+    "aws-vpc",
+    "ecs-fargate",
+    "lambda",
+    "api-gateway",
+    "load-balancer",
+    "terraform-registry",
+    "startup",
+    "devops",
+    "cloud-infrastructure"
+  ],
+  "author": "Sumanth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sumanth12-afk/aws-startup-terraform-modules/issues"
+  },
+  "homepage": "https://github.com/Sumanth12-afk/aws-startup-terraform-modules#readme",
+  "scripts": {
+    "format": "terraform fmt -recursive",
+    "validate": "find . -type f -name 'main.tf' -not -path '*/examples/*' -not -path '*/.terraform/*' -exec dirname {} \\; | xargs -I {} sh -c 'cd {} && terraform validate'",
+    "lint": "tflint --recursive",
+    "security": "tfsec .",
+    "docs": "terraform-docs markdown table --output-file README.md --output-mode inject .",
+    "pre-commit": "pre-commit run --all-files",
+    "prepare": "husky install || true"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "husky": "^8.0.3",
+    "semantic-release": "^21.1.2"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/github",
+      "@semantic-release/git"
+    ]
+  }
+}
+
