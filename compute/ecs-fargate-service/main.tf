@@ -310,7 +310,7 @@ resource "aws_ecs_task_definition" "main" {
         logDriver = "awslogs"
         options = {
           "awslogs-group"         = aws_cloudwatch_log_group.main[0].name
-          "awslogs-region"        = data.aws_region.current.name
+          "awslogs-region"        = data.aws_region.current.id
           "awslogs-stream-prefix" = "ecs"
         }
       } : null
@@ -393,11 +393,11 @@ resource "aws_ecs_service" "main" {
   deployment_configuration {
     maximum_percent         = 200
     minimum_healthy_percent = 100
-  }
-
-  deployment_circuit_breaker {
-    enable   = true
-    rollback = true
+    
+    deployment_circuit_breaker {
+      enable   = true
+      rollback = true
+    }
   }
 
   tags = merge(
@@ -434,7 +434,7 @@ resource "aws_service_discovery_service" "main" {
   }
 
   health_check_custom_config {
-    failure_threshold = 1
+    # failure_threshold is deprecated and always set to 1 by AWS
   }
 
   tags = merge(

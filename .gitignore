@@ -67,3 +67,15 @@ site/
 test-results/
 coverage/
 
+# Status and progress files (internal use only)
+FINAL_SUMMARY_AND_PUSH.md
+MODULES_COMPLETE.txt
+MODULES_PROGRESS.md
+READY_TO_PUSH.md
+FINAL_STATUS.md
+PROJECT_STATUS.md
+IMPLEMENTATION_GUIDE.md
+COMPLETION_GUIDE.md
+REFACTORING_SUMMARY.md
+GIT_PUSH_SUMMARY.md
+
