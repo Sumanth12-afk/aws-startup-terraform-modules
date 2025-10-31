@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/compare/v1.0.0...v1.0.1) (2025-10-31)
+
+
+### Bug Fixes
+
+* add GitHub Actions permissions for semantic-release ([980285a](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/commit/980285a70c3fc6ce36346dbae91bda3098e51fba))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -159,4 +166,3 @@ See [SUPPORT.md](SUPPORT.md) for information on getting help.
 [Unreleased]: https://github.com/Sumanth12-afk/aws-startup-terraform-modules/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/Sumanth12-afk/aws-startup-terraform-modules/releases/tag/v1.0.0
 [0.1.0]: https://github.com/Sumanth12-afk/aws-startup-terraform-modules/releases/tag/v0.1.0
-
