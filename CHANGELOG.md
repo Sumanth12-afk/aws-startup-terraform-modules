@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/compare/v1.0.1...v1.0.2) (2025-10-31)
+
+
+### Bug Fixes
+
+* resolve ECS service validation errors and tfsec security scan permissions ([56d259f](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/commit/56d259f7f8e3c338bb19a22b6563f6e79a321e5e))
+* update CI/CD Terraform version to 1.10.5 to match local environment ([dfafdb0](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/commit/dfafdb01aa39c0e46dc38acb189c2471f700d9cc))
+
 ## [1.0.1](https://github.com/Sumanth12-afk/aws-startup-terraform-modules/compare/v1.0.0...v1.0.1) (2025-10-31)
 
 
