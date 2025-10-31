@@ -88,7 +88,7 @@ module "cross_account_role" {
     "arn:aws:iam::aws:policy/ReadOnlyAccess"
   ]
 
-  max_session_duration = 14400  # 4 hours
+  max_session_duration = 14400 # 4 hours
 
   tags = {
     Purpose = "CrossAccount"

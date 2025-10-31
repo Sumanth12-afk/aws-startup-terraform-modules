@@ -24,11 +24,11 @@ resource "aws_cloudwatch_metric_alarm" "ec2_cpu" {
   statistic           = "Average"
   threshold           = var.ec2_cpu_threshold
   alarm_actions       = [aws_sns_topic.alarms.arn]
-  
+
   dimensions = {
     InstanceId = var.ec2_instance_ids[count.index]
   }
-  
+
   tags = var.tags
 }
 
@@ -43,11 +43,11 @@ resource "aws_cloudwatch_metric_alarm" "rds_cpu" {
   statistic           = "Average"
   threshold           = var.rds_cpu_threshold
   alarm_actions       = [aws_sns_topic.alarms.arn]
-  
+
   dimensions = {
     DBInstanceIdentifier = var.rds_instance_ids[count.index]
   }
-  
+
   tags = var.tags
 }
 
@@ -62,19 +62,19 @@ resource "aws_cloudwatch_metric_alarm" "alb_target_response_time" {
   statistic           = "Average"
   threshold           = var.alb_response_time_threshold
   alarm_actions       = [aws_sns_topic.alarms.arn]
-  
+
   dimensions = {
     TargetGroup  = element(split(":", var.alb_target_group_arns[count.index]), 5)
     LoadBalancer = var.alb_names[count.index]
   }
-  
+
   tags = var.tags
 }
 
 resource "aws_cloudwatch_dashboard" "main" {
   count          = var.create_dashboard ? 1 : 0
   dashboard_name = "${var.environment}-monitoring"
-  
+
   dashboard_body = jsonencode({
     widgets = concat(
       var.enable_ec2_alarms ? [

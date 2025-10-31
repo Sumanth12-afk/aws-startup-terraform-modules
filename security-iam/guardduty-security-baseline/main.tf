@@ -28,8 +28,8 @@ resource "aws_guardduty_detector" "main" {
 }
 
 resource "aws_securityhub_account" "main" {
-  count                   = var.enable_security_hub ? 1 : 0
-  enable_default_standards = var.enable_default_standards
+  count                     = var.enable_security_hub ? 1 : 0
+  enable_default_standards  = var.enable_default_standards
   control_finding_generator = "SECURITY_CONTROL"
 }
 
@@ -39,7 +39,7 @@ resource "aws_config_configuration_recorder" "main" {
   role_arn = aws_iam_role.config[0].arn
 
   recording_group {
-    all_supported = true
+    all_supported                 = true
     include_global_resource_types = var.include_global_resources
   }
 }

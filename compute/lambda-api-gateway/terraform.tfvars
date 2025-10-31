@@ -13,8 +13,8 @@ api_description = "My Startup API"
 stage_name      = "v1"
 
 # CORS Configuration
-enable_cors         = true
-cors_allow_origins  = ["https://myapp.com", "https://www.myapp.com"]
+enable_cors        = true
+cors_allow_origins = ["https://myapp.com", "https://www.myapp.com"]
 
 # API Key (optional)
 enable_api_key = false
@@ -62,15 +62,15 @@ lambda_functions = {
 lambda_layer_arns = []
 
 # VPC Configuration (if Lambda needs VPC access)
-enable_vpc              = false
-vpc_subnet_ids          = []
-vpc_security_group_ids  = []
+enable_vpc             = false
+vpc_subnet_ids         = []
+vpc_security_group_ids = []
 
 # Monitoring
-enable_xray             = true
-log_retention_days      = 30
+enable_xray              = true
+log_retention_days       = 30
 enable_cloudwatch_alarms = true
-alarm_sns_topic_arn     = "arn:aws:sns:us-east-1:123456789012:alerts"
+alarm_sns_topic_arn      = "arn:aws:sns:us-east-1:123456789012:alerts"
 
 # Tags
 tags = {

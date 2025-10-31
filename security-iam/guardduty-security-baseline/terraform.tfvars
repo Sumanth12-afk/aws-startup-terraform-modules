@@ -1,8 +1,8 @@
 environment = "production"
 aws_region  = "us-east-1"
 
-enable_guardduty              = true
-finding_publishing_frequency  = "FIFTEEN_MINUTES"
+enable_guardduty             = true
+finding_publishing_frequency = "FIFTEEN_MINUTES"
 enable_s3_protection         = true
 enable_kubernetes_protection = true
 enable_malware_protection    = true

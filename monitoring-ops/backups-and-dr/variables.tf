@@ -18,7 +18,7 @@ variable "aws_profile" {
 variable "backup_schedule" {
   description = "Cron expression for backup schedule"
   type        = string
-  default     = "cron(0 2 * * ? *)"  # Daily at 2 AM UTC
+  default     = "cron(0 2 * * ? *)" # Daily at 2 AM UTC
 }
 
 variable "retention_days" {

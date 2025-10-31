@@ -26,11 +26,11 @@ enable_cloudfront    = false
 # acm_certificate_arn    = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012"
 
 # Versioning & Lifecycle
-enable_versioning                   = true
-enable_lifecycle_rules              = true
-noncurrent_version_expiration_days  = 90
-transition_to_ia_days               = 30
-transition_to_glacier_days          = 90
+enable_versioning                  = true
+enable_lifecycle_rules             = true
+noncurrent_version_expiration_days = 90
+transition_to_ia_days              = 30
+transition_to_glacier_days         = 90
 
 # Logging Configuration
 enable_access_logging = true
@@ -51,8 +51,8 @@ cors_max_age_seconds = 3000
 cache_control = "public, max-age=31536000"
 
 # Monitoring
-enable_metrics    = true
-enable_inventory  = false
+enable_metrics      = true
+enable_inventory    = false
 inventory_frequency = "Weekly"
 
 # Tags

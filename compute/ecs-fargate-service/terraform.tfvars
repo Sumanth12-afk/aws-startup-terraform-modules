@@ -5,11 +5,11 @@
 # Remote State & AWS Configuration
 # ========================================
 
-aws_region         = "us-east-1"
-state_bucket_name  = "my-company-terraform-state"
-state_lock_table   = "terraform-state-locks"
-environment        = "production"
-project_name       = "my-startup"
+aws_region        = "us-east-1"
+state_bucket_name = "my-company-terraform-state"
+state_lock_table  = "terraform-state-locks"
+environment       = "production"
+project_name      = "my-startup"
 
 # ========================================
 # ECS Cluster Configuration
@@ -23,16 +23,16 @@ enable_container_insights = true
 # ECS Service Configuration
 # ========================================
 
-service_name       = "api-service"
-desired_count      = 3
-enable_fargate_spot = true
+service_name            = "api-service"
+desired_count           = 3
+enable_fargate_spot     = true
 fargate_spot_percentage = 50
 
 # Enable for debugging (SSH into containers)
 enable_execute_command = false
 
 # Service Discovery (optional)
-enable_service_discovery     = false
+enable_service_discovery       = false
 service_discovery_namespace_id = ""
 
 # ========================================
@@ -42,17 +42,17 @@ service_discovery_namespace_id = ""
 container_name  = "api"
 container_image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/api:latest"
 container_port  = 8080
-host_port       = 0  # Dynamic port mapping
+host_port       = 0 # Dynamic port mapping
 
 # Resource allocation
-cpu    = 512   # 0.5 vCPU
-memory = 1024  # 1 GB
+cpu    = 512  # 0.5 vCPU
+memory = 1024 # 1 GB
 
 # Environment variables
 environment_variables = {
-  NODE_ENV = "production"
+  NODE_ENV  = "production"
   LOG_LEVEL = "info"
-  PORT = "8080"
+  PORT      = "8080"
 }
 
 # Secrets from AWS Secrets Manager or SSM Parameter Store
@@ -101,8 +101,8 @@ scale_out_cooldown  = 60
 # Logging Configuration
 # ========================================
 
-enable_logging      = true
-log_retention_days  = 30
+enable_logging     = true
+log_retention_days = 30
 
 # ========================================
 # Tags

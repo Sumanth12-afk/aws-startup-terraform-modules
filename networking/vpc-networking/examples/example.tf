@@ -9,10 +9,10 @@ module "vpc_production" {
   availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
 
   # Enable production features
-  enable_nat_gateway      = true
-  single_nat_gateway      = false # High availability - NAT per AZ
-  enable_database_subnets = true
-  enable_flow_logs        = true
+  enable_nat_gateway         = true
+  single_nat_gateway         = false # High availability - NAT per AZ
+  enable_database_subnets    = true
+  enable_flow_logs           = true
   flow_logs_destination_type = "s3"
 
   tags = {
@@ -61,8 +61,8 @@ module "vpc_staging" {
   enable_ipv6             = true
 
   # Custom DHCP options
-  enable_custom_dhcp_options      = true
-  dhcp_options_domain_name        = "staging.internal.example.com"
+  enable_custom_dhcp_options       = true
+  dhcp_options_domain_name         = "staging.internal.example.com"
   dhcp_options_domain_name_servers = ["AmazonProvidedDNS"]
 
   # Flow logs configuration

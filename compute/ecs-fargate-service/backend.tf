@@ -10,7 +10,7 @@ terraform {
     #   -backend-config="region=us-east-1" \
     #   -backend-config="dynamodb_table=terraform-state-locks" \
     #   -backend-config="encrypt=true"
-    
+
     # Or use a backend.hcl file:
     # terraform init -backend-config=backend.hcl
   }

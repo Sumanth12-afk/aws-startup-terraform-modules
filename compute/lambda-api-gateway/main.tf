@@ -143,7 +143,7 @@ resource "aws_lambda_function" "main" {
 locals {
   # Extract unique paths from lambda functions
   unique_paths = distinct([for k, v in var.lambda_functions : v.http_path])
-  
+
   # Create map of path to resource
   path_resources = {
     for path in local.unique_paths :
@@ -166,10 +166,10 @@ resource "aws_api_gateway_resource" "paths" {
 resource "aws_api_gateway_method" "main" {
   for_each = var.lambda_functions
 
-  rest_api_id   = aws_api_gateway_rest_api.main.id
-  resource_id   = aws_api_gateway_resource.paths[each.value.http_path].id
-  http_method   = each.value.http_method
-  authorization = each.value.authorization
+  rest_api_id      = aws_api_gateway_rest_api.main.id
+  resource_id      = aws_api_gateway_resource.paths[each.value.http_path].id
+  http_method      = each.value.http_method
+  authorization    = each.value.authorization
   api_key_required = var.enable_api_key
 }
 

@@ -19,7 +19,7 @@ alias_records = {
   "cdn" = {
     type                   = "A"
     target                 = "d111111abcdef8.cloudfront.net"
-    zone_id                = "Z2FDTNDATAQYW2"  # CloudFront hosted zone ID
+    zone_id                = "Z2FDTNDATAQYW2" # CloudFront hosted zone ID
     evaluate_target_health = false
   }
 }

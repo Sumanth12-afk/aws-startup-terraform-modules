@@ -70,19 +70,19 @@ module "ecs_service_spot" {
 
   cluster_name              = "staging-cluster"
   create_cluster            = true
-  enable_container_insights = false  # Cost optimization
+  enable_container_insights = false # Cost optimization
 
   service_name  = "staging-api"
   desired_count = 2
 
   # Enable Fargate Spot for 70% cost savings
-  enable_fargate_spot      = true
-  fargate_spot_percentage  = 70
+  enable_fargate_spot     = true
+  fargate_spot_percentage = 70
 
   container_image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/api:staging"
   container_port  = 8080
 
-  cpu    = 256  # Smaller for staging
+  cpu    = 256 # Smaller for staging
   memory = 512
 
   vpc_id                     = module.vpc.vpc_id
@@ -109,8 +109,8 @@ module "ecs_service_advanced" {
   environment  = "production"
   project_name = "my-startup"
 
-  cluster_name = "production-cluster"
-  create_cluster = false  # Use existing cluster
+  cluster_name   = "production-cluster"
+  create_cluster = false # Use existing cluster
 
   service_name    = "backend-api"
   desired_count   = 5
@@ -122,10 +122,10 @@ module "ecs_service_advanced" {
 
   # Environment Variables
   environment_variables = {
-    NODE_ENV      = "production"
-    LOG_LEVEL     = "info"
-    PORT          = "3000"
-    REDIS_HOST    = "redis.internal.example.com"
+    NODE_ENV       = "production"
+    LOG_LEVEL      = "info"
+    PORT           = "3000"
+    REDIS_HOST     = "redis.internal.example.com"
     ENABLE_METRICS = "true"
   }
 
@@ -194,7 +194,7 @@ module "ecs_service_worker" {
   service_name    = "background-worker"
   desired_count   = 2
   container_image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/worker:latest"
-  container_port  = 8080  # Not exposed externally
+  container_port  = 8080 # Not exposed externally
 
   cpu    = 512
   memory = 1024

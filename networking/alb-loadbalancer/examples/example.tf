@@ -24,10 +24,10 @@ module "alb_basic" {
   environment = "production"
 
   # HTTPS Configuration
-  enable_https            = true
-  enable_http             = true
-  http_redirect_to_https  = true
-  certificate_arn         = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012"
+  enable_https           = true
+  enable_http            = true
+  http_redirect_to_https = true
+  certificate_arn        = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012"
 
   # Security
   allowed_cidr_blocks = ["0.0.0.0/0"]
@@ -49,11 +49,11 @@ module "alb_microservices" {
   environment = "production"
 
   # HTTPS Configuration
-  enable_https            = true
-  enable_http             = true
-  http_redirect_to_https  = true
-  certificate_arn         = "arn:aws:acm:us-east-1:123456789012:certificate/your-cert-id"
-  ssl_policy              = "ELBSecurityPolicy-TLS13-1-2-2021-06"
+  enable_https           = true
+  enable_http            = true
+  http_redirect_to_https = true
+  certificate_arn        = "arn:aws:acm:us-east-1:123456789012:certificate/your-cert-id"
+  ssl_policy             = "ELBSecurityPolicy-TLS13-1-2-2021-06"
 
   # Multiple Target Groups for Microservices
   target_groups = {
@@ -145,16 +145,16 @@ module "alb_microservices" {
   }
 
   # Access Logs
-  enable_access_logs  = true
-  access_logs_bucket  = "my-alb-logs-bucket"
-  access_logs_prefix  = "production-alb"
+  enable_access_logs = true
+  access_logs_bucket = "my-alb-logs-bucket"
+  access_logs_prefix = "production-alb"
 
   # CloudWatch Alarms
-  enable_cloudwatch_alarms         = true
-  alarm_actions                    = ["arn:aws:sns:us-east-1:123456789012:alerts"]
-  target_response_time_threshold   = 2.0
-  unhealthy_host_threshold         = 2
-  elb_5xx_threshold                = 50
+  enable_cloudwatch_alarms       = true
+  alarm_actions                  = ["arn:aws:sns:us-east-1:123456789012:alerts"]
+  target_response_time_threshold = 2.0
+  unhealthy_host_threshold       = 2
+  elb_5xx_threshold              = 50
 
   # Advanced Configuration
   enable_deletion_protection       = true
@@ -179,7 +179,7 @@ module "alb_internal" {
   subnet_ids = module.vpc.private_subnet_ids
 
   environment = "production"
-  internal    = true  # Internal ALB
+  internal    = true # Internal ALB
 
   # HTTP Only (internal services don't need HTTPS)
   enable_https           = false
@@ -193,7 +193,7 @@ module "alb_internal" {
     backend = {
       port                 = 8080
       protocol             = "HTTP"
-      target_type          = "ip"  # For ECS Fargate
+      target_type          = "ip" # For ECS Fargate
       deregistration_delay = 30
       health_check = {
         enabled             = true
@@ -213,7 +213,7 @@ module "alb_internal" {
 
   default_target_group = "backend"
 
-  enable_deletion_protection = false  # Allow easier cleanup for dev
+  enable_deletion_protection = false # Allow easier cleanup for dev
 
   tags = {
     Project     = "my-startup"

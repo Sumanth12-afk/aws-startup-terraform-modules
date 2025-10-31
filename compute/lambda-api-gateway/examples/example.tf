@@ -176,9 +176,9 @@ module "api_vpc" {
   stage_name = "v1"
 
   # VPC Configuration
-  enable_vpc              = true
-  vpc_subnet_ids          = ["subnet-abc123", "subnet-def456"]
-  vpc_security_group_ids  = ["sg-lambda123"]
+  enable_vpc             = true
+  vpc_subnet_ids         = ["subnet-abc123", "subnet-def456"]
+  vpc_security_group_ids = ["sg-lambda123"]
 
   lambda_functions = {
     db_query = {
@@ -198,7 +198,7 @@ module "api_vpc" {
     }
   }
 
-  enable_cors = false  # Internal API
+  enable_cors = false # Internal API
   enable_xray = true
 }
 
@@ -223,9 +223,9 @@ module "api_python" {
       memory_size      = 2048
       timeout          = 300
       environment_variables = {
-        S3_BUCKET         = "my-data-bucket"
-        ATHENA_DATABASE   = "analytics_db"
-        RESULT_BUCKET     = "query-results"
+        S3_BUCKET       = "my-data-bucket"
+        ATHENA_DATABASE = "analytics_db"
+        RESULT_BUCKET   = "query-results"
       }
       http_method   = "GET"
       http_path     = "/analytics"
@@ -254,8 +254,8 @@ module "api_python" {
     "arn:aws:lambda:us-east-1:123456789012:layer:numpy-layer:1"
   ]
 
-  enable_xray             = true
-  log_retention_days      = 90
+  enable_xray              = true
+  log_retention_days       = 90
   enable_cloudwatch_alarms = true
 }
 

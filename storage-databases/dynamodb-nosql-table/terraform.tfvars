@@ -17,8 +17,8 @@ billing_mode = "PAY_PER_REQUEST"
 # write_capacity = 10
 
 # Schema Configuration
-hash_key      = "user_id"
-hash_key_type = "S"
+hash_key       = "user_id"
+hash_key_type  = "S"
 range_key      = "created_at"
 range_key_type = "N"
 
@@ -61,14 +61,14 @@ enable_encryption = true
 # kms_key_arn       = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
 
 # Streams
-enable_streams    = true
-stream_view_type  = "NEW_AND_OLD_IMAGES"
+enable_streams   = true
+stream_view_type = "NEW_AND_OLD_IMAGES"
 
 # Auto Scaling (only for PROVISIONED mode)
-enable_autoscaling            = false
-autoscaling_read_target       = 70
-autoscaling_read_min_capacity = 5
-autoscaling_read_max_capacity = 100
+enable_autoscaling             = false
+autoscaling_read_target        = 70
+autoscaling_read_min_capacity  = 5
+autoscaling_read_max_capacity  = 100
 autoscaling_write_target       = 70
 autoscaling_write_min_capacity = 5
 autoscaling_write_max_capacity = 100

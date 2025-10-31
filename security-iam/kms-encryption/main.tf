@@ -3,7 +3,7 @@ data "aws_partition" "current" {}
 
 locals {
   account_id = data.aws_caller_identity.current.account_id
-  
+
   key_administrators = length(var.key_administrators) > 0 ? var.key_administrators : [
     "arn:${data.aws_partition.current.partition}:iam::${local.account_id}:root"
   ]
@@ -11,11 +11,11 @@ locals {
 
 resource "aws_kms_key" "main" {
   description              = var.description
-  key_usage               = var.key_usage
+  key_usage                = var.key_usage
   customer_master_key_spec = var.customer_master_key_spec
   deletion_window_in_days  = var.deletion_window_in_days
   enable_key_rotation      = var.enable_key_rotation
-  multi_region            = var.multi_region
+  multi_region             = var.multi_region
 
   policy = jsonencode({
     Version = "2012-10-17"

@@ -18,7 +18,7 @@ description = "RDS database credentials"
 # Rotation
 enable_rotation = false
 # rotation_lambda_arn = "arn:aws:lambda:us-east-1:123456789012:function:rotate-secret"
-rotation_days   = 30
+rotation_days = 30
 
 recovery_window_in_days = 30
 

@@ -18,7 +18,7 @@ backend_image  = "123456789012.dkr.ecr.us-east-1.amazonaws.com/backend-api:lates
 frontend_image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/frontend-web:latest"
 
 # Cost Optimization
-enable_fargate_spot = true  # 70% cost savings
+enable_fargate_spot = true # 70% cost savings
 
 # Database
 database_name     = "myapp_production"

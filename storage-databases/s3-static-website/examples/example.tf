@@ -40,9 +40,9 @@ module "production_website" {
   acm_certificate_arn    = "arn:aws:acm:us-east-1:123456789012:certificate/abc123"
 
   # Security
-  enable_encryption     = true
-  kms_key_id            = "arn:aws:kms:us-east-1:123456789012:key/abc123"
-  enable_public_access  = false  # Served via CloudFront only
+  enable_encryption    = true
+  kms_key_id           = "arn:aws:kms:us-east-1:123456789012:key/abc123"
+  enable_public_access = false # Served via CloudFront only
 
   # Versioning & Lifecycle
   enable_versioning                  = true

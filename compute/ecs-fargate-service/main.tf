@@ -39,9 +39,9 @@ data "aws_ecs_cluster" "existing" {
 }
 
 locals {
-  cluster_id   = var.create_cluster ? aws_ecs_cluster.main[0].id : data.aws_ecs_cluster.existing[0].id
-  cluster_arn  = var.create_cluster ? aws_ecs_cluster.main[0].arn : data.aws_ecs_cluster.existing[0].arn
-  cluster_name = var.cluster_name
+  cluster_id     = var.create_cluster ? aws_ecs_cluster.main[0].id : data.aws_ecs_cluster.existing[0].id
+  cluster_arn    = var.create_cluster ? aws_ecs_cluster.main[0].arn : data.aws_ecs_cluster.existing[0].arn
+  cluster_name   = var.cluster_name
   container_name = var.container_name != "" ? var.container_name : var.service_name
 }
 
@@ -393,7 +393,7 @@ resource "aws_ecs_service" "main" {
   deployment_configuration {
     maximum_percent         = 200
     minimum_healthy_percent = 100
-    
+
     deployment_circuit_breaker {
       enable   = true
       rollback = true

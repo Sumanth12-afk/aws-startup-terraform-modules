@@ -9,7 +9,7 @@ variable "aws_region" {
 variable "environment" {
   description = "Environment name (dev, staging, production)"
   type        = string
-  
+
   validation {
     condition     = can(regex("^(dev|staging|production)$", var.environment))
     error_message = "Environment must be dev, staging, or production."

@@ -82,7 +82,7 @@ output "estimated_monthly_cost" {
     cloudwatch      = "~$20"
     secrets_manager = "~$1"
     total           = "~$396-546/month"
-  } : {
+    } : {
     vpc             = "~$35 (1 NAT Gateway)"
     alb             = "~$25"
     ecs_fargate     = "~$60-100 (3 tasks)"

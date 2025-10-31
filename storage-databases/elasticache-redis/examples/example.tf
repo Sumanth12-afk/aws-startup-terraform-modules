@@ -32,12 +32,12 @@ module "production_cache" {
 
   engine_version         = "7.0"
   node_type              = "cache.r6g.large"
-  num_cache_nodes        = 2  # Primary + 1 replica
+  num_cache_nodes        = 2 # Primary + 1 replica
   parameter_group_family = "redis7"
 
-  vpc_id                      = module.vpc.vpc_id
-  subnet_ids                  = module.vpc.private_subnet_ids
-  allowed_security_group_ids  = [module.app.security_group_id]
+  vpc_id                     = module.vpc.vpc_id
+  subnet_ids                 = module.vpc.private_subnet_ids
+  allowed_security_group_ids = [module.app.security_group_id]
 
   # High Availability
   automatic_failover_enabled = true
@@ -77,10 +77,10 @@ module "cluster_mode_cache" {
   environment = "production"
   cluster_id  = "myapp-cluster"
 
-  node_type              = "cache.r6g.xlarge"
-  cluster_mode_enabled   = true
-  num_node_groups        = 3  # 3 shards
-  replicas_per_node_group = 2  # 2 replicas per shard
+  node_type               = "cache.r6g.xlarge"
+  cluster_mode_enabled    = true
+  num_node_groups         = 3 # 3 shards
+  replicas_per_node_group = 2 # 2 replicas per shard
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnet_ids

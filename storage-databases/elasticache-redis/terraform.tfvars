@@ -8,14 +8,14 @@ aws_profile = "default"
 # state_lock_table  = "terraform-state-lock"
 
 # Cluster Configuration
-cluster_id               = "myapp-redis-prod"
-engine_version           = "7.0"
-node_type                = "cache.r6g.large"
-parameter_group_family   = "redis7"
+cluster_id             = "myapp-redis-prod"
+engine_version         = "7.0"
+node_type              = "cache.r6g.large"
+parameter_group_family = "redis7"
 
 # Cluster Mode (choose one configuration)
 cluster_mode_enabled = false
-num_cache_nodes      = 2  # Primary + 1 replica
+num_cache_nodes      = 2 # Primary + 1 replica
 
 # For cluster mode enabled (uncomment):
 # cluster_mode_enabled     = true
@@ -23,10 +23,10 @@ num_cache_nodes      = 2  # Primary + 1 replica
 # replicas_per_node_group  = 1  # Replicas per shard
 
 # Network Configuration
-vpc_id                 = "vpc-0123456789abcdef0"
-subnet_ids             = ["subnet-0123456789abcdef0", "subnet-0123456789abcdef1"]
-allowed_cidr_blocks    = ["10.0.0.0/16"]
-port                   = 6379
+vpc_id              = "vpc-0123456789abcdef0"
+subnet_ids          = ["subnet-0123456789abcdef0", "subnet-0123456789abcdef1"]
+allowed_cidr_blocks = ["10.0.0.0/16"]
+port                = 6379
 
 # High Availability
 automatic_failover_enabled = true

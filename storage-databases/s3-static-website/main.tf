@@ -9,9 +9,9 @@ resource "random_id" "bucket_suffix" {
 }
 
 locals {
-  bucket_name = var.bucket_name != "" ? var.bucket_name : "${var.bucket_prefix}-${var.environment}-${random_id.bucket_suffix[0].hex}"
+  bucket_name     = var.bucket_name != "" ? var.bucket_name : "${var.bucket_prefix}-${var.environment}-${random_id.bucket_suffix[0].hex}"
   log_bucket_name = var.access_log_bucket != null ? var.access_log_bucket : "${local.bucket_name}-logs"
-  
+
   common_tags = merge(
     var.tags,
     {

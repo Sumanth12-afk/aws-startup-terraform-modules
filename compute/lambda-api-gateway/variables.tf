@@ -91,16 +91,16 @@ variable "certificate_arn" {
 variable "lambda_functions" {
   description = "Map of Lambda function configurations"
   type = map(object({
-    handler          = string
-    runtime          = string
-    filename         = string
-    source_code_hash = string
-    memory_size      = number
-    timeout          = number
+    handler               = string
+    runtime               = string
+    filename              = string
+    source_code_hash      = string
+    memory_size           = number
+    timeout               = number
     environment_variables = map(string)
-    http_method      = string
-    http_path        = string
-    authorization    = string
+    http_method           = string
+    http_path             = string
+    authorization         = string
   }))
 }
 

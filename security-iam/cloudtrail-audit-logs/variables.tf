@@ -89,7 +89,7 @@ variable "transition_to_glacier_days" {
 variable "expiration_days" {
   description = "Days until logs expire"
   type        = number
-  default     = 2555  # 7 years for compliance
+  default     = 2555 # 7 years for compliance
 }
 
 variable "force_destroy" {

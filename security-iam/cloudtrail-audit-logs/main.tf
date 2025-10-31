@@ -3,12 +3,12 @@ data "aws_partition" "current" {}
 
 resource "aws_cloudtrail" "main" {
   name                          = var.trail_name
-  s3_bucket_name               = aws_s3_bucket.cloudtrail.id
+  s3_bucket_name                = aws_s3_bucket.cloudtrail.id
   include_global_service_events = var.include_global_service_events
-  is_multi_region_trail        = var.is_multi_region_trail
-  enable_log_file_validation   = var.enable_log_file_validation
-  kms_key_id                   = var.kms_key_id
-  enable_logging               = true
+  is_multi_region_trail         = var.is_multi_region_trail
+  enable_log_file_validation    = var.enable_log_file_validation
+  kms_key_id                    = var.kms_key_id
+  enable_logging                = true
 
   dynamic "event_selector" {
     for_each = var.event_selectors
